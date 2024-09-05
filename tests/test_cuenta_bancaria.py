@@ -7,9 +7,11 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../s
 
 
 class TestCalcular(unittest.TestCase):
-    # TODO Adiciona tus pruebas unitarias aquí.
-    # Ejemplo:   
-    # def test_suma(self):
-    #     valor_esperado = 3
-    #     valor_actual = calcular(1, 2, '+')
-    #     self.assertEqual(valor_esperado, valor_actual)
+    def test_ingresar(self):
+        self.cuenta.ingresar(2000)
+        self.assertEqual(self.cuenta.getSaldo(), 8000.0)
+        
+    
+    def test_retirar(self):
+        self.cuenta.retirar(2000)
+        self.assertEqual(self.cuenta.getSaldo(), 6000.0)
